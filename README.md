@@ -2,8 +2,11 @@
 Single Cell Massive Clustering
 
 OS: Linux or MacOS
-GPU: Nvidia GPU
+
+GPU: Nvidia GPU with CUDA toolkit (https://developer.nvidia.com/cuda-toolkit)
+
 Languages: C++, Perl
+
 C++ libraries: CUDA, openMP
 
 
