@@ -19,6 +19,13 @@ nvcc cal_sim_knn.cu -o cal_sim_knn
 g++ -fopenmp all_sim_knn_openmp.cpp -o all_sim_knn_openmp
 ```
 
+## Format of the input expression file
+```
+Gene*Cell	Cell1	Cell2	Cell3	Cell4	Cell5	Cell6
+ENSMUSG00000000001	44	67	14	43	55	43
+ENSMUSG00000000031	0	0	5	7	0	0
+... ... ... ...
+```
 
 ## step 1: normalize cells and calculate standard_deviation and select variable genes
 
