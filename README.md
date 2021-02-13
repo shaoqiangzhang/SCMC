@@ -1,7 +1,11 @@
 # SCMC
 Single Cell Massive Clustering
 
-##  compile all c++ files and install MCL
+OS: Linux or MacOS
+
+
+
+##  compile all c++ files and install MCL 
 ```
 g++ read_mtx_file.cpp -o read_mtx_file
 g++  cal_sd.cpp -o cal_sd
@@ -30,7 +34,7 @@ perl distribution_calculation.pl data.sd 1
 ```
 ## step 3: calculate cell-cell similarity using multiple CPU threads + GPU (CUDA)
 
-### run the following perl script to calculate similarity among all cells (with similarity cut-off and KNN)
+### run the following command to calculate similarity among all cells (with similarity cut-off and KNN)
 ```
 ./all_sim_knn_openmp <new_expression_file> <cell_number> <K_of_KNN> <similarity_cutoff> <thread_number>
 ```
