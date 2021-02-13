@@ -2,7 +2,9 @@
 Single Cell Massive Clustering
 
 OS: Linux or MacOS
-
+GPU: Nvidia GPU
+Languages: C++, Perl
+C++ libraries: CUDA, openMP
 
 
 ##  compile all c++ files and install MCL 
