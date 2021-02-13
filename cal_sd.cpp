@@ -42,7 +42,7 @@ int main(int argc, const char** argv){
 	int gene_num=ExpressMatrix.size();
 	//cout<<cell_num<<"\t"<<gene_num<<endl;
 	Matrix input_data;
-	float *genedev;
+	//float *genedev;
 	for(int i=0;i<cell_num;i++){//transpose of the Expression Matrix and normalize
 		float thiscellsum=0;
 		for(int j=0;j<gene_num;j++){
@@ -61,7 +61,7 @@ int main(int argc, const char** argv){
 		input_data.push_back(thiscellvector);
 		thiscellvector.clear();
 	}
-	genedev=(float *)malloc(gene_num*sizeof(float));
+	//genedev=(float *)malloc(gene_num*sizeof(float));
 	for(int j=0;j<gene_num;j++){
 		float sumvalue=0, meanvalue=0, dev=0;
 		for(int i=0;i<cell_num;i++){
@@ -71,8 +71,9 @@ int main(int argc, const char** argv){
 		for(int i=0;i<cell_num;i++){
 			dev=dev+(input_data[i][j]-meanvalue)*(input_data[i][j]-meanvalue);
 		}
-		genedev[j]=sqrt(dev);
-		cout<<genedev[j]<<endl;
+		//genedev[j]=sqrt(dev);
+		//cout<<genedev[j]<<endl;
+		cout<<sqrt(dev)<<endl;
 	}
 
 }

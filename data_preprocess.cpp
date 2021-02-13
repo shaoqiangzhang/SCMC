@@ -46,7 +46,8 @@ int main(int argc, const char** argv){
 	//int gene_num=allGeneNames.size();
 	//cout<<"#cells="<<cell_num<<"; #genes="<<gene_num<<endl;
 	Matrix input_data;
-	float *genedev;
+	//float *genedev;
+	vector<float> genedev;
 	for(int i=0;i<cell_num;i++){//transpose of the Expression Matrix and normalize
 		float thiscellsum=0;
 		for(int j=0;j<gene_num;j++){
@@ -64,7 +65,7 @@ int main(int argc, const char** argv){
 		thiscellvector.clear();
 	}
 
-	genedev=(float *)malloc(gene_num*sizeof(float));
+	//genedev=(float *)malloc(gene_num*sizeof(float));
 	for(int j=0;j<gene_num;j++){//calculate standard deviation for each gene
 		float sumvalue=0, meanvalue=0, dev=0;
 		for(int i=0;i<cell_num;i++){
@@ -74,7 +75,8 @@ int main(int argc, const char** argv){
 		for(int i=0;i<cell_num;i++){
 			dev=dev+(input_data[i][j]-meanvalue)*(input_data[i][j]-meanvalue);
 		}
-		genedev[j]=sqrt(dev);
+		//genedev[j]=sqrt(dev);
+		genedev.push_back(sqrt(dev));
 		//cout<<genedev[j]<<endl;
 	}
 	
