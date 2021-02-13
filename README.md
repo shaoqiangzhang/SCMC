@@ -19,12 +19,31 @@ nvcc cal_sim_knn.cu -o cal_sim_knn
 g++ -fopenmp all_sim_knn_openmp.cpp -o all_sim_knn_openmp
 ```
 
-## Format of the input expression file
+## Format of the input expression file 
 ```
 Gene*Cell	Cell1	Cell2	Cell3	Cell4	Cell5	Cell6
 ENSMUSG00000000001	44	67	14	43	55	43
 ENSMUSG00000000031	0	0	5	7	0	0
 ... ... ... ...
+```
+## If the file is ".mtx" format, please transfer mtx file into the above format
+
+For example, give a file named "matrix.mtx" as follows,
+```
+%%MatrixMarket matrix coordinate integer general
+%
+33694 4340 5727695
+33665 1 3
+33663 1 7
+33662 1 11
+33661 1 1
+33660 1 5
+33659 1 17
+... ...
+```
+transfer "matrix.mtx" into a file with name "matrix.txt"
+```
+./read_mtx_file matrix.mtx > matrix.txt
 ```
 
 ## step 1: normalize cells and calculate standard_deviation and select variable genes
