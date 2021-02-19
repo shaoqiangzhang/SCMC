@@ -9,6 +9,8 @@ Languages: C++, Perl
 
 C++ libraries: CUDA, openMP
 
+Tools: MCL (https://micans.org/mcl/src/)
+
 
 ##  compile all c++ files and install MCL 
 ```
