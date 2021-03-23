@@ -9,7 +9,6 @@ Languages: C++, Perl
 
 C++ libraries: CUDA, openMP
 
-Tools: MCL (https://micans.org/mcl/src/)
 
 
 ##  compile all c++ files and install MCL 
@@ -19,6 +18,7 @@ g++  cal_sd.cpp -o cal_sd
 g++ data_preprocess.cpp -o data_preprocess
 nvcc cal_sim_knn.cu -o cal_sim_knn
 g++ -fopenmp all_sim_knn_openmp.cpp -o all_sim_knn_openmp
+g++ mcmp.cpp -fopenmp -o mcmp
 ```
 ## The format of the input expression file is as follows. 
 
@@ -75,7 +75,10 @@ perl distribution_calculation.pl data.sd 1
 
 ## step 4: MCL clustering
 
-### run the MCL program
 ```
-mcl <similarity_file> --abc -o output_cluster_file
+./mcmp input_file <thread_number>  <inflation_number>   > output_file
 ```
+
+note:
+1. inflation number 1~2, default=1.5
+2. thread number default=1
