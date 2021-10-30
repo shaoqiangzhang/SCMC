@@ -76,9 +76,19 @@ perl distribution_calculation.pl data.sd 1
 ## step 4: MCL clustering
 
 ```
-./mcmp input_file <thread_number>  <inflation_number>   > output_file
+./mcmp <sim_file> <thread_number>  <inflation_number>   > mcl_file
 ```
-
 note:
+1. sim_file is the output file of step3
 1. inflation number 1~2, default=1.5
 2. thread number default=1
+
+## step 5: reassign small-size clusters
+
+```
+./reassign_clust.pl <mcl_file> <sim_file> <min_size>
+```
+note:
+1. mcl_file is the output file of step4
+2. sim_file is the output file of step3
+3. min_size is the minimum size of clusters to be reassigned to large clusters
